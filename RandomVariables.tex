@@ -1,0 +1,227 @@
+\textbf{Random Variables}\\
+A random variables is a real valued function defined on the sample space.\\
+\begin{align*}
+X:S &\rightarrow \mathbb{R} \\
+\omega &\rightarrow X(\omega) 
+\end{align*}
+
+\textbf{Cumulative Distribution function}\\
+The cdf of a function.\\
+
+$$F_X (x) = \mathbb{P}(X \leq x)$$
+
+\textbf{Probability mass function}\\
+The probability mass function of a discrete random variable is defined by 
+
+$$p_X(x) = \mathbb{P}(X=x)$$
+
+\textbf{Binomial distribution}\\
+
+Given 
+\begin{itemize}
+\item Success with probability $p$
+\item Numbers of independent repetitions $n$
+\end{itemize}
+
+$$p_X(x) = \left ( \begin{matrix} n \\ x \end{matrix} \right ) p^x (1-p)^{n-x}$$
+
+\textbf{Bernouli distribution}\\
+$$X \sim \text{Bern}$$
+With a pmf
+$$p_X(x) = \begin{cases}1-p & \text{if } x = 0 \\ p & \text{if } x= 1 \\ 0 & \text{otherwise } \end{cases}$$ 
+
+\textbf{Geometric distribution}
+$$P_X(x) = (1-p)^{x-1} p \text{ for } S_x$$
+
+\textbf{Poisson distribution}
+$$p_X(x) = e^{-\lambda} \frac{\lambda^x}{x!}$$
+
+Poisson distribution is good for modelling assuming continuity, stationarity, independence and non-simultaneity.\\
+
+$\lambda$ represents the intensity of the phenomenon.\\
+
+\textbf{Uniform Distribution}
+Uniform distribution is defined as
+
+$$X \sim U_{[\alpha, \beta]}$$
+
+$$f_X(x) = \begin{cases} \frac{1}{\beta - \alpha} & \text{if } x \in [\alpha, \beta] \\ 0 & \text{otherwise} \end{cases}$$
+
+\textbf{Exponential distribution}\\
+$$X \sim Exp(\lambda)$$
+The probability density function is given by
+
+$$ f_X(x) = \begin{cases} \lambda e^{-\lambda x} &  \text{ if }\geq 0 \\ 0 & \text{ otherwise} \end{cases}$$
+
+\textbf{Gamma Distribution}\\
+$$X = \Gamma(\alpha, \lambda)$$
+
+Its probability funciton is defined by
+
+$$f_X(x) = \begin{cases} \frac{\lambda e^{\lambda x} (\lambda x)^{\alpha-1}}{\Gamma(\alpha)} & \text{if } x \geq 0 \\ 0 & \text{otherwise} \end{cases}$$
+
+Where
+$$\Gamma(\alpha) = \int_0^{+\inf} e^{-x} x^{\alpha-1} dx$$
+
+\textbf{Normal Distribution}
+
+A random variable is said to have a normal distribution which has parameters $\mu$ and $\sigma$ with the following probability density function
+
+$$f_X(x) = \frac{1}{\sqrt{2 \pi \sigma^2}}e^-\frac{(x - \mu)^2}{2\sigma^2}$$
+
+\textbf{Parameters of a distribution}
+The two most important quantities of a distribution are
+\begin{itemize}
+\item Expectation
+\item Variance
+\end{itemize}
+
+Expectation is defined as:
+$$\mathbb{E}(X) = \int_{-\infty}^\infty x dF_X(x)$$
+
+\textbf{Cauchy Distribution}
+A random variable is said to have a Cauchy distribution if its probability density function is given by
+$$f_X(x) = \frac{1}{\pi(1+x^2)}$$
+
+The Cauchy distribution does not have an expectation value.\\
+
+\textbf{Moments of a random variable}\\
+
+Lets define the \textbf{kth moment of a random variable} as
+
+$$\mathbb{E}(X^k) = \int_{-\infty}^{\infty} x^k dF_X(x)$$
+
+\textbf{Variance}\\
+The variance of a random variable is defined as
+$$Var(X) = \mathbb{E}((X-\mathbb{E}(X))^2)$$
+
+Explicitly
+$$Var(X) = \int_{-\infty}^{\infty} (x- \mathbb{E}(X))^2 dF_X(x)$$
+
+\textbf{Properties of variance} \\
+Property 1: $Var(X) = E(X^2) - (E(X))^2$\\
+Property 2: $Var(aX + b) = a^2 Var(X)$ \\
+
+The standard deviation is defined as $\sqrt{Var(X)}$.\\
+
+\textbf{Joint distribution function}\\
+
+The joint cumulative distribution function is defined by
+$$F_{XY}(x,y) = \mathbb{P}(X \geq x, Y \geq y) \forall (x,y) \in \mathbb{R} \times \mathbb{R}$$
+
+Marginal cdf's are obtained by 
+$$F_X(x) = F_{XY}(x,+\infty) \text{ and } F_Y(y) = F_{XY}(+\infty, y)$$
+
+\textbf{Continuous case}\\
+$X$ and $Y$ are said to be jointly continuous if there exists a function $f_{XY}(x,y): \mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R}^+$ such that for any sets $A$ and $B$ of real numbers.
+$$\mathbb{P}(X \in A, Y \in B) = \int_A \int_B f_{XY}(x,y) dy dx$$
+
+\textbf{Independent random variables}\\
+The random variables $X$ and $Y$ are said to be independent if for all $(x,y) \in \mathbb{R}$ 
+
+$$\mathbb{P}(X \leq x, Y \leq y) = \mathbb{P}(X \leq x) \times \mathbb{P}(Y \leq y)$$
+
+Their expected value will behave like:
+$$\mathbb{E}(h(x)g(x) = \mathbb{E}(h(x)) \times \mathbb{E}{g(x)}$$
+
+\textbf{Covariance of two random variables}
+$$Cov(X,Y) = \mathbb{E}(X - \mathbb{E}(X))(Y - \mathbb{E}(Y))$$
+
+If $Cov(X,Y) > 0$, X tends to increase as Y tends to increase.\\
+
+If $Cov(X,Y) < 0$, X tends to decrease as Y tends to increase and vica versa.\\
+
+\textbf{Variance of a sum of random variables}\\
+\begin{align*}
+Var(\sum_{i=1}^n X_i) &= Cov (\sum_{i=1}^n X_i, \sum_{j=1}^n X_j)\\
+&= \sum_{i=1}^n \sum_{j=1}^n Cov(X_i X_j) \\
+&= \sum_{i=1}^n Cov(X_i, X_i) + \sum_{i=1}^n \sum_{j \neq 1} Cov(X_i,X_j)\\
+&= \sum_{i=1}^n Var(X_i) + 2 \sum_{i<j} Cov(X_i,X_j)
+\end{align*}
+
+\textbf{Sum of independent variables}\\
+Let $X$ and $Y$ be 2 random variables. We know
+
+$$\mathbb{E}(X+Y) = \mathbb{E}(X)+ \mathbb{E}(Y)$$
+$$Var(X+Y) = Var(X)+Var(Y)+2Cov(X,Y)$$
+
+If $X$ and $Y$ are independent then
+$$f_{X+Y} = \int_{-\infty}^{\infty} f_X(z-y) f_Y(y) dy$$
+
+Important slides to look at: Slides 107-110\\
+
+\textbf{Moment Generating function}\\
+The moment generating function of a random variable is defined as
+
+$$\varphi_X(t)  = \mathbb{E}(e^{tX}) = \int_{-\infty}^{\infty} dF_x(x)$$
+
+If $\varphi_X (t)$ exists around zero, then for any positive integer $n$, $\varphi_X^{(n)} = \frac{d^n \varphi_X(t)}{dt^n}|_{t=0}$
+
+Characteristic equation is defined as:
+
+$$\phi_X(t) = \mathbb{E}(e^{itx}) = \int_{-\infty}^{\infty} e^{itx} dF_X(x)$$
+
+To find the expectation and variance from the mgf, see slide 114-116\\
+
+\textbf{Properties}\\
+\begin{itemize}
+	\item Moment generating function uniquely determines the distribution of a random variable
+	\item For any real numbers $\varphi_{aX+b}(t) = e^{bt} \varphi_X(at)$
+	\item $\varphi_{X+Y}(t) = \varphi_X(t) * \varphi_Y(t)$ if $X$ and $Y$ are two independent variables.
+\end{itemize}
+
+\textbf{Joint Moment Generating function}\\
+$$\varphi_{X_1 X_2 ...X_n}(t_1,t_2...t_n) = \mathbb{E}(e^{t_1X_1 + t_2X_2+ ... + t_nX_n})$$
+
+\textbf{Multivariate normal distribution}\\
+The random variables $X_1,X_2...X_n$ are said to have a multivariate normal distribution if there exists $m$ independent standard normal variables $Z_1...Z_m$ such that
+
+$$X_1 = \mu_1 + a_{11}Z_1 + a_{12}Z_2 + ... + a_{1m}Z_m$$
+
+and so on.\\
+
+\textbf{Cramer-Wold theorem}\\
+The random variables $X_1,X_2,..., X_n$ are said to have a multivariate normal distribution iff for any vector $(b_1,b_2...b_n) \in \mathbb{R}$ the linear combination $(b_1X_1 + b_2X_2 + ... + b_nX_n)$ has a normal distribution.\\
+
+\textbf{Copula}\\
+There always exists a function $C_{XY}$ such that $\forall X,Y$\\
+
+$$F_{XY}(x,y) = C_{XY}(F_X(x),F_Y(y))$$
+Where $C_{XY}$ is a copula of the distribution.\\
+
+\textbf{Independence Copula}\\
+If $C_{XY}(uv) = uv$ then $F_{XY}(x,y) = F_{X}(x) +F_Y(y)$\\
+
+\textbf{Gaussian Copula}\\
+Two marginal normal distributions will interact so as to produce a bivariate normal distribution with correlation $\rho$ iff 
+
+$$C_{X,Y}(u,v) = \int_0^u \int_0^v \frac{exp(\frac{-\rho^2 (\theta^{-1}(\zeta) - \theta^{-1}(\mu))^2}{2(1-\rho^2)})}{\sqrt{1-\rho^2}} d\zeta d\mu$$	
+
+But any other copula function gives us a joint distribution with normal marginals which is not bivariate normal.\\
+
+\textbf{Normally distributed functions}\\
+
+If $X$ and $Y$ are normally distributed, $X$ and $Y$ are independent iff $Cov(X,Y) = 0$.\\
+
+\textbf{Markov's Inequality}\\
+If $X$ is a random variable that takes only non negative values, then for any value $a >0$
+
+$$\mathbb{P}(X \geq a) \leq \frac{\mathbb{E}(X)}{a}$$
+
+\textbf{Chevyshev's inequality}\\
+
+Let $X$ be a random variable with mean $\mu$ and variance $\sigma^2$. Then for any value $k > 0$, 
+
+$$\mathbb{P}(|X - \mu| \geq k) \leq \frac{\sigma^2}{k^2}$$
+
+\textbf{Strong law of large numbers}\\
+Let $X_1, X_2... X_n$ be a sequence of independent random variables having a common distribution, and let $\mathbb{E}(X_i) = \mu < \infty$. Then with probability 1
+
+$$\bar{X_n} =  \frac{X_1+X_2 + ...+ X_n}{n} = \mu \text{ as } n \rightarrow \infty$$
+
+\textbf{Central Limit Theorem}\\
+Let $X_1,X_2...X_n$ be a sequence of independent and identically distributed random variables with $\mathbb{E}(X_i) = \mu < \infty$ and $Var(X_i) = \sigma^2 < \infty$. Then the distribution of $\frac{S_n - n_\mu}{\sigma n}$ tends to the standard normal as $n \rightarrow \infty$. That is
+
+$$\mathbb{P}(\frac{S_n - n_\mu}{\sigma \sqrt{n}} \leq z) \rightarrow \theta (z) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{z} e^{-\frac{x^2}{2} dx}$$
+
+Where $S_n = n \bar{X_n}$.

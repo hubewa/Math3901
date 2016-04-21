@@ -1,0 +1,74 @@
+\textbf{Exponential distribution: moments}\\
+
+$$\varphi_X(t) = \mathbb{E}(e^{tX}) = \frac{\lambda}{\lambda -t} $$
+
+$$\mathbb{E} = \frac{1}{\lambda}$$
+
+$$Var(X) = \frac{1}{\lambda^2}$$
+
+A non-negative random variable $X$ is said to be without memory or memoryless if 
+
+$$P(X >s + t|X > t) = \mathbb{P}(X > s)$$
+
+Another equivalent formulation
+
+$$\mathbb{P}(X > s+t) = \mathbb{P}(X > t) \times \mathbb{P}(X > s)$$
+
+Exponential distribution is memoryless and is the only function that is memoryless.\\
+
+\textbf{Hazard rate function}\\
+
+For a continuous random variable $X$ having cdf $F_X$ and density $f_X$ the hazard rate function is defined by
+
+$$r_X(t) = \frac{f_X(t)}{1 - F_X(t)}$$
+
+The Geometric distribution is the only discrete distribution that has the memoryless property.\\
+
+\textbf{Properties}
+1. Let $X_1, X_2...X_n$ be i.i.d Exponential random variables with parameter $\lambda$. Then
+
+$$\sum_{i=1}^n X_i \sim \Gamma(n,\lambda)$$
+
+2. Let $X_1$ and $X_2$ be independent exponential random variables with respective rates $\lambda_1$ and $\lambda_2$. Then
+
+$$\mathbb{P}(X_1 < X_2) = \frac{\lambda_1}{\lambda_1 + \lambda_2}$$
+
+This can be generalised to
+
+$$\mathbb{P}(X_i \text{ is the minimum} ) = \frac{\lambda_i}{\sum_{j=1}^n \lambda_j}$$
+
+3. Let $X_1, X_2...X_n$ be independent exponential random variables with respective rates $\lambda_1, \lambda_2, ... \lambda_n$. Then the distribution of $X_{(1)} = min_i X_i$ is exponentially distribted with rate equal to $\sum_{i=1}^n \lambda_i$, ie
+
+$$X_{(1)} \sim \text{Exp}(\sum_{i=1}^n \lambda_i)$$
+
+\textbf{Sum of Exponential random variables}\\
+
+$$f_{X_1 + X_2 +...+ X_n}(t) = \sum_{i=1}^n C_{i,n} \lambda_i e^{-\lambda_it}$$
+Where
+$$C_{i,n} = \prod_{i \neq j} \frac{\lambda_j}{\lambda_j - \lambda_i}$$
+
+\textbf{Geometric sum of exponential variables}
+$$X = \sum_{i=1}^N X_i \sim \text{Exp}(p \lambda)$$
+
+\textbf{Arrival process}\\
+An arrival process is a sequence of increasing random variables $0 < S_1 < S_2 < ...$ is called arrival times and representing the times at which some repeating phenomenon occurs.\\
+
+\textbf{Interarrival times}\\
+The interarrival times $X_1, X_2,...$ are positive random variables defined in terms of the arrival times by $X_1 = S_1$ and $X_i = S_i - S_{i-1}$ for $i > 1$. Similarly we can write
+
+$$S_n = \sum_{i=1}^n X_i$$
+
+\textbf{Counting Process}\\
+
+A stochastic process $\{N(t), t \geq 0 \}$ is said to be a counting process if $N(t)$ represents the total number of occurances of a certain phenomenon by (and including) time $t$.\\
+
+Some properties
+\begin{enumerate}
+	\item $N(t)>0$ for all $t \geq 0$
+	\item $N(t)$ is an integer valued for all $t \geq 0$
+	\item $N(0) = 0$ 
+	\item For all $t_2 > t_1, N(t_2) \geq N(t_1)$
+\end{enumerate}
+
+\textbf{Increment}\\
+The increment of the counting process between time $t_1$ and time $t_2$ is the number of occurances of the phenomenon in the interval $(t_1,t_2]$ ie $N(t_2) - N(t_1)$

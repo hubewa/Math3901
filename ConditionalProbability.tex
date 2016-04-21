@@ -1,0 +1,45 @@
+\textbf{Conditional Probability discrete case}\\
+The conditional expectation of $X$ given by $Y = y$ is defined by
+
+$$\mathbb{E}(X|Y = y) = \sum_{x \in S_x} x p_{X|Y} (x|y)$$
+
+\textbf{Conditional probability density function}\\
+
+The conditional probability density function of $X$ given $Y = y$ is defined for all values $y$ such that $f_Y(y) > 0$ by 
+
+$$f_{X|Y}(x,y) = \frac{f_{XY}(x,y)}{f_Y(y)}$$
+
+Marginal density is defined as
+$$\mathbb{P}(y-\delta/2 \leq Y \leq y + \delta/2) \approx \delta f_Y(y)$$
+
+\textbf{Law of iterred expectations}\\
+Let $X$ and $Y$ be two random variables. Then:
+
+$$\mathbb{E}(X) = \mathbb{E}[\mathbb{E}(X|Y)]$$
+
+$\mathbb{E}(X)$ is the weighted average of the conditional expected values of $X$ given $Y=y$, each of the terms $\mathbb{E}(X|Y=y)$ being weighted by the probability of the event on which it is conditioned.\\
+
+This also satisfies:\\
+
+$$\mathbb{E}[\mathbb{E}(X|Y)g(Y)] = \mathbb{E}(Xg(Y))$$
+
+for any function $g$ where both expectations exist.\\
+
+\textbf{Conditional Variance}\\
+The conditional variance of a random variable $X$ given that $Y = y$ is given by
+
+$$Var(X|Y=y) = \mathbb{E}[(X-\mathbb{E}(X|Y=y))^2|Y=y]$$
+
+All properties of Variance hold here.\\
+
+\textbf{Conditional variance formula}\\
+Let $X$ and $Y$ be two random variables. Then
+
+$$Var(X) = \mathbb{E}[Var(X|Y) + Var[\mathbb{E}(X|Y)]] $$
+
+\textbf{Iterred Conditonal expectation}\\
+$$\mathbb{E}(X|Y) = \mathbb{E}[\mathbb{E}(X|W,Y)|Y]$$
+
+where $\mathbb{E}(X|W,Y)$ is a random variable $\mathbb{E}(X|W=w, Y=y)$\\
+
+(Example of this being used slide 190-194) 

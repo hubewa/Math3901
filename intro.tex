@@ -1,0 +1,48 @@
+\textbf{Kolmogorov's axioms}\\
+The probability measures $\mathbb{P}(.)$ satisfies\\
+
+\begin{enumerate}
+\item $0 \leq \mathbb{P}(E) \leq 1$ for any event E
+\item $\mathbb{P}(S) = 1$
+\item For any chain of mutually exclusive events
+$$  \mathbb{P} \left(\bigcup_{i=1}^\infty E_i \right) = \sum_{i=1}^\infty \mathbb{P} (E_i) $$
+\end{enumerate}
+
+\textbf{Frequentists definition of probability}\\
+If the experiment is repeated independently over and over again, the proportion of time that the event E occurs is $\mathbb{P}(E)$\\
+
+\textbf{Conditional probability}\\
+The conditional probability of $E_1$, conditional on $E_2$ is defined as
+
+$$\mathbb{P}(E_1|E_2) = \frac{\mathbb{P}(E_1 \cap E_2)}{\mathbb{P}(E_2)} $$
+
+\textbf{Bayes first rule:}\\
+If $\mathbb{P}(E_1), \mathbb{P}(E_2) > 0$ then
+$$\mathbb{P}(E_1|E_2) = \mathbb{P}(E_2|E_1) \frac{E_1}{E_2}$$
+
+\textbf{Independence of two events}\\
+An event is defined to be \textbf{independent} iff
+
+$$\mathbb{P}(E_1 \cap E_2) =\mathbb{P}(E_1) \times \mathbb{P}(E_2) $$ 
+
+\textbf{Independence of several events}\\
+Several events are defined to be independent iff for every subset $\{ i_1, i_2 ... i_n \}$ of ${1,2...n}$\\
+
+$$\mathbb{P}(\bigcap_{j=1}^\infty E_{ij}) = \prod_{j=1}^\infty (E_{ij})$$
+
+\textbf{Partition}\\
+A sequence of events $E_1, E_2 ....E_n$ such that
+\begin{enumerate}
+\item $S = \cup_{i=1}^n E_i$
+\item $E_i \cap E_j = \theta$ for all $i \neq j$
+\end{enumerate}
+Is called a partition of $S$.\\
+
+\textbf{Laws of total probability}\\
+Given a partition $\{ E_1, E_2 ... E_n \}$ of $S$ such that $\mathbb{P}(E_i) > 0$ for all $i$, the probability 
+$$\mathbb{P}(A) = \sum_{i=1}^n \mathbb{P}(A|E_i) \times \mathbb{P}(E_i)$$
+
+\textbf{Bayes second rule:}\\
+Given a partition $\{ E_1, E_2, E_3 ...E_n \}$ of S such that $\mathbb{P}(E_i) > 0$, for all $i$ we have for any event $A$ such that $\mathbb{P}(A) > 0$
+
+$$\mathbb{P}(E_i|A)= \frac{\mathbb{P}(A|E_i) \mathbb{P}(E_i)}{\sum_{j=1}^n \mathbb{P}(A|E_j) \mathbb{P}(E_j)}$$
