@@ -24,7 +24,7 @@ $$r_X(t) = \frac{f_X(t)}{1 - F_X(t)}$$
 
 The Geometric distribution is the only discrete distribution that has the memoryless property.\\
 
-\textbf{Properties}
+\textbf{Properties}\\
 1. Let $X_1, X_2...X_n$ be i.i.d Exponential random variables with parameter $\lambda$. Then
 
 $$\sum_{i=1}^n X_i \sim \Gamma(n,\lambda)$$
@@ -41,7 +41,7 @@ $$\mathbb{P}(X_i \text{ is the minimum} ) = \frac{\lambda_i}{\sum_{j=1}^n \lambd
 
 $$X_{(1)} \sim \text{Exp}(\sum_{i=1}^n \lambda_i)$$
 
-\textbf{Sum of Exponential random variables}\\
+4. If $X_1, X_2,...X_n$ are independently exponentially distributed variables with respective distinct parameters $\lambda_i$ then
 
 $$f_{X_1 + X_2 +...+ X_n}(t) = \sum_{i=1}^n C_{i,n} \lambda_i e^{-\lambda_it}$$
 Where
@@ -72,3 +72,90 @@ Some properties
 
 \textbf{Increment}\\
 The increment of the counting process between time $t_1$ and time $t_2$ is the number of occurances of the phenomenon in the interval $(t_1,t_2]$ ie $N(t_2) - N(t_1)$
+
+\textbf{Poisson process}\\
+A Poisson process is an arrival process in which the interarrival intervals are i.i.d. and exponentially distributed. ie, there exists some parameter $\lambda > 0$ such that
+
+$$X_1, X_2.... \sim^{\text{i.i.d}} Exp(\lambda)$$
+
+\textbf{Stationary increment}\\
+A counting process $\{ N(t), t \geq 0 \}$ has the stationary increment property if for every $0 < t_1 < t_2$, $N(t_2) - N(t_1)$ has the same distribution function as $N(t_2 - t_1)$.\\
+
+\textbf{Independent increment property}\\
+
+
+
+...\\
+
+
+
+(Slide 371)\\
+\textbf{Poisonn process: 3 quivalent distributions}\\
+A Poisson process is a counting process that satisfies\\
+\begin{align*}
+\mathbb{P}(N(t-\delta) - N(t) = 0) &= 1 - \lambda \delta + o(\delta)
+\mathbb{P}(N(t-\delta) - N(t) = 1) &= \lambda \delta + o(\delta)
+\mathbb{P}(N(t-\delta) - N(t) = 2) &= o(\delta)
+\end{align*}
+
+\textbf{Independent posson processes}\\
+We say that two poisson process $\{N_1(t), t \geq 0\}$ and $\{N_2(t), t \geq 0\}$ are independent if their interarrival time random variables are independent. Equivalently, the random variables $N_1(t)$ and $N_2(t)$ should be independent for all $t_1,t_2 \geq 0$.\\
+
+\textbf{Conditional distribution of arrival times}\\
+Given that $N(t) = n$, the joint density of $n$ arrival times $S_1,S_2...S_n$is constant over a region $0 < s_1 < s_2 < ... s_n \leq t$ with\\
+
+$$f_{S_1S_2...S_n|N(t)}(s_1s_2..s_n|n) = \frac{n!}{t^n}$$
+
+if $0 < s_1 < s_2 <... < s_n \leq t$, and 0 otherwise.\\
+
+\textbf{Order statisitcs}\\
+The vector $(Y_{(1)}, Y_{(2)}, ... Y_{(n)})$ is called the order statistics of the vector $(Y_1,Y_2...Y_n)$.\\
+
+\textbf{Conditional distribution of arrival times}\\
+
+Given that $N(t)$, the $n$ arrival times $S_1,S_2...S_n$ have the same distribution as order statistics corresponding to $n$ independent random variables uniformly distributed over the interval $[0,t]$.\\
+
+\textbf{Beta Distribution}\\
+A random variable is said to have a Beta distributino with parameters $\alpha$ and $\beta$ ($\alpha, \beta > 0$), ie \\
+
+$$X \sim \mathcal{B}(\alpha, \beta)$$
+
+Its pdf is given by
+
+$$f_X(x) = \begin{cases} \frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha,\beta)} & \text{ if } x \in [0,1] \\ 0 & \text{otherwise} \end{cases}$$
+
+Where $B(\alpha, \beta)$ is a normalisation constant.\\
+
+By integration it is easy to find $F_X(x)$ and\\
+$$\mathbb{E}(X) = \frac{\alpha}{\alpha + \beta} $$
+and 
+$$Var(X) = \frac{\alpha \beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)}$$
+
+The Beta distribution is a common model for the behaviour of random variables limited to intervals of finite length.\\
+
+\textbf{Sampling a Poisson process}\\
+For any $t$, $N_1(t)$ and $N_2(t)$ are independent Poisson random variables having means
+$$\mathbb{E}(N_1(t)) = \lambda \int_0^t p(s)ds$$
+$$\mathbb{E}(N_2(t)) = \lambda \int_0^t (1-p(s))ds$$
+
+\textbf{Generalisations of Poisson process}\\
+
+The assumptions on which the Poisson process is built state that
+
+\begin{enumerate}
+	\item The rate $\lambda$ is constant
+	\item Only single arrivals are possible at a time.
+\end{enumerate}
+
+Hence the following generalisations are useful:
+
+\begin{enumerate}
+	\item Non-homogeneous Poisson Process
+	\item Compound Poisson process
+\end{enumerate}
+
+\textbf{Non-homogeneous Poisson process}\\
+(Slide 408)\\
+
+\textbf{Compound Poisson process}\\
+(Slide 421)

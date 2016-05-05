@@ -1,0 +1,16 @@
+\textbf{Continious time Markov Chain}\\
+
+A continuous-time stochastic process $\{ X(t), t \geq 0 \}$ taking on values in the set of nonnegative integers is a continuous time Markov Chain if for all $s,t \geq 0$ and nonnegative integers $i, j, x(\tau), 0 \leq \tau \leq s$.
+
+$$\mathbb{P}(X(t+s) = j|X(s) = i, \{X(\tau) = x(\tau), 0 \leq \tau < s \}) = \mathbb{P}(X(t+s)=j|X(s)=i)$$
+
+To find the probability that the process will not leave state $i$ during the following $t$ units of time, we must have:
+
+$$\mathbb{P}(T_i > s + t| T_i >s) = \mathbb{P}(T_i > t)$$
+
+\textbf{Alternative definition}\\
+A continuous time Markov Chain is a stochastic process which moves from state to state in accordance with a discrete time Markov Chain, but is such that the amounts of time it spends in each state, before proceeding to the next state are independent exponentially distributed variables. This is known as an \textbf{embedded markov chain}\\
+
+This is known as the transition-probability based representaiton of the chain.\\
+
+(Slide 440)
